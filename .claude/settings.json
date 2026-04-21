@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ynput.io)",
+      "WebFetch(domain:help.ayon.app)",
+      "WebFetch(domain:docs.ayon.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:community.ynput.io)",
+      "WebFetch(domain:pyblish.com)",
+      "WebFetch(domain:pypi.org)",
+      "WebSearch",
+      "Bash(gh *)",
+      "Bash(git *)",
+      "Bash(wc *)"
+    ]
+  }
+}
