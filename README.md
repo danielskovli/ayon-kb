@@ -4,11 +4,13 @@ A focused reference for working with **Ayon** (Ynput's open-source production
 pipeline platform) — targeted at answering user ("how do I…") questions and
 developer ("I want to build a plugin that…") questions alike.
 
-Source material: `ynput.io/ayon`, `help.ayon.app`, `docs.ayon.dev`,
-`github.com/ynput`. Initial draft 2026-04-21; cross-check with the live docs
-before relying on any specific class name, import path, or endpoint — the
-product moves fast. Every file ends with a **Sources** block pointing back to
-the URLs used to build it.
+Source material: [ynput.io/ayon](https://ynput.io/ayon/),
+[help.ayon.app](https://help.ayon.app/),
+[docs.ayon.dev](https://docs.ayon.dev/),
+[github.com/ynput](https://github.com/ynput). Initial draft 2026-04-21;
+cross-check with the live docs before relying on any specific class name,
+import path, or endpoint — the product moves fast. Every file ends with a
+**Sources** block pointing back to the URLs used to build it.
 
 ## Index
 
@@ -127,5 +129,6 @@ the URLs used to build it.
 - "Legacy OpenPype" notes are included where modules still bear `openpype` /
   `pype` naming; Ayon is the rebranded successor, so expect mixed
   nomenclature in older code.
-- `99-open-questions.md` tracks things I couldn't verify. If you confirm or
-  debunk one of those, move the fact into the relevant numbered file.
+- [99-open-questions.md](99-open-questions.md) tracks things I couldn't
+  verify. If you confirm or debunk one of those, move the fact into the
+  relevant numbered file.
