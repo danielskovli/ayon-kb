@@ -80,42 +80,42 @@ the URLs used to build it.
 ## Quick-start routes
 
 ### "How do I…" (artist / admin)
-- **Launch a DCC for a task** → `17` §First-day workflow
-- **Save a workfile** → `17` §Workfiles tool
-- **Publish something** → `17` §Create / Publish
-- **Pull a published asset into my scene** → `17` §Loader
-- **Update loaded items** → `17` §Scene Inventory
-- **Change where files go on disk** → `14` §Roots → `17` §Admin map
-- **Understand product types** → `03` §Products + `17`
-- **Create a new project / user / access group** → `19`
-- **Upload an addon / create a bundle in the UI** → `19` §Bundles
-- **Configure applications per project** → `19` §Applications
-- **Interpret settings color-coding** → `19` §Settings
+- **Launch a DCC for a task** → [17 § First-day workflow](17-user-workflows.md#first-day-workflow-launching-a-task)
+- **Save a workfile** → [17 § Workfiles tool](17-user-workflows.md#workfiles-tool)
+- **Publish something** → [17 § Create / Publish](17-user-workflows.md#create--publish)
+- **Pull a published asset into my scene** → [17 § Loader](17-user-workflows.md#loader)
+- **Update loaded items** → [17 § Scene Inventory](17-user-workflows.md#scene-inventory)
+- **Change where files go on disk** → [14 § Roots](14-anatomy-templates.md#roots) → [17 § Admin map](17-user-workflows.md#admin--configuration-quick-map)
+- **Understand product types** → [03 § Products](03-data-model.md#products) + [17](17-user-workflows.md)
+- **Create a new project / user / access group** → [19](19-admin-web.md)
+- **Upload an addon / create a bundle in the UI** → [19 § Bundles](19-admin-web.md#bundles--addons)
+- **Configure applications per project** → [19 § Applications](19-admin-web.md#applications--tools)
+- **Interpret settings color-coding** → [19 § Color coding](19-admin-web.md#color-coding)
 
 ### "I want to build a plugin that…" (dev)
-- **…is a full new addon from scratch** → `04` → `05` → `06` → `18` §1
-- **…adds a new UI button that runs on the artist's machine** → `18` §2
-- **…reacts to events** → `09` + `18` §3
-- **…adds a new product type** → `08` + `18` §4 + `15`
-- **…validates + self-repairs** → `18` §5
-- **…downloads files outside a DCC** → `18` §6 + `10`
-- **…adds a tab to the Ayon web UI** → `05` §Frontend scopes + `18` §7
-- **…exposes a REST endpoint** → `05` §REST endpoints + `18` §8
-- **…has host-scoped settings** → `05` §Settings UI + `18` §9
-- **…handles colorspace correctly** → `16` + `18` §13
-- **…runs on the farm** → `18` §14 + `24`
+- **…is a full new addon from scratch** → [04](04-addon-structure.md) → [05](05-server-addon.md) → [06](06-client-addon.md) → [18 § 1](18-recipes.md#1-i-want-to-create-a-brand-new-addon-from-scratch)
+- **…adds a new UI button that runs on the artist's machine** → [18 § 2](18-recipes.md#2-i-want-a-button-on-the-server-ui-that-runs-a-cli-command-on-the-artists-machine)
+- **…reacts to events** → [09](09-events-services.md) + [18 § 3](18-recipes.md#3-i-want-to-react-to-an-event-on-the-server)
+- **…adds a new product type** → [08](08-publishing.md) + [18 § 4](18-recipes.md#4-i-want-to-publish-a-new-product-type-from-maya) + [15](15-loaders-inventory.md)
+- **…validates + self-repairs** → [18 § 5](18-recipes.md#5-i-want-a-validator-that-repairs-itself)
+- **…downloads files outside a DCC** → [18 § 6](18-recipes.md#6-i-want-to-download-representations-to-disk-outside-a-dcc) + [10](10-apis.md)
+- **…adds a tab to the Ayon web UI** → [05 § Frontend scopes](05-server-addon.md#frontend-scopes) + [18 § 7](18-recipes.md#7-i-want-to-add-a-new-scope-to-the-ayon-web-ui)
+- **…exposes a REST endpoint** → [05 § REST endpoints](05-server-addon.md#rest-endpoints) + [18 § 8](18-recipes.md#8-i-want-to-expose-a-custom-rest-endpoint)
+- **…has host-scoped settings** → [05 § Settings UI](05-server-addon.md#settings-ui--widgets--patterns) + [18 § 9](18-recipes.md#9-i-want-a-settings-field-that-only-shows-for-some-hosts)
+- **…handles colorspace correctly** → [16](16-site-sync-colorspace.md) + [18 § 13](18-recipes.md#13-i-want-to-validate-colorspace-on-publish)
+- **…runs on the farm** → [18 § 14](18-recipes.md#14-i-want-to-run-the-same-plugin-on-the-farm-deadline) + [24](24-deadline.md)
 
 ### DCC-specific
-- **Maya publish patterns, product catalog** → `20`
-- **Houdini USD contribution / loader HDAs** → `21`
-- **Nuke Write / Templated Workfile Builder** → `22`
-- **Premiere CEP install / smart layers** → `23`
-- **Deadline two-job pattern / submitter classes** → `24`
+- **Maya publish patterns, product catalog** → [20](20-maya.md)
+- **Houdini USD contribution / loader HDAs** → [21](21-houdini.md)
+- **Nuke Write / Templated Workfile Builder** → [22](22-nuke.md)
+- **Premiere CEP install / smart layers** → [23](23-premiere.md)
+- **Deadline two-job pattern / submitter classes** → [24](24-deadline.md)
 
 ### Deploy / run
-- **Spin up a dev server** → `11` §Deploying a fresh server
-- **Configure bundles** → `02` §Bundles + `11` §Bundles
-- **Run a service** → `09` §Services + `02` §ASH
+- **Spin up a dev server** → [11 § Deploying a fresh server](11-launcher-dev.md#deploying-a-fresh-server-for-dev)
+- **Configure bundles** → [02 § Bundles](02-architecture.md#bundles) + [11 § Bundles](11-launcher-dev.md#bundles)
+- **Run a service** → [09 § Services](09-events-services.md#services-overview-ash) + [02 § ASH](02-architecture.md#ash--ayon-service-host)
 
 ## Conventions
 

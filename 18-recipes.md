@@ -18,8 +18,7 @@ base class in `ayon-core` for the current signature before relying on it.
 7. `ayon --use-dev`. Verify the addon shows up in Studio Settings and, if
    it's a client addon, that `ayon addon <name> --help` responds.
 
-## 2. "I want a button on the server UI that runs a CLI command on the
-artist's machine"
+## 2. "I want a button on the server UI that runs a CLI command on the artist's machine"
 
 - **Server side**: implement `get_simple_actions()` and `execute_action()`
   returning `executor.get_launcher_action_response(args=[...])`. See
