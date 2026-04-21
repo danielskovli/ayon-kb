@@ -157,8 +157,21 @@ styled-components + axios inside a Vite + React project.
 
 ### Lifecycle hooks on `BaseServerAddon`
 
-`setup` → `initialize` → `post_setup` (+ `pre_setup`, `on_settings_changed`).
-Keep `server/` **stateless** — persistence belongs in Postgres, not on self.
+Order (verified against `ayon-backend/develop` 2026-04-21):
+`__init__` → `initialize` → `pre_setup` → `setup`. `pre_setup` and
+`setup` each run once per addon version during server lifespan
+startup, sequentially across all addons (all `pre_setup`s first, then
+all `setup`s). `on_settings_changed(old, new, variant, project_name,
+site_id, user_name)` fires later when settings are saved with
+`send_event=True`. **No `post_setup`** on current `develop`.
+
+`initialize` is called at the end of `__init__`, so it's the
+canonical place to `add_endpoint` / `add_event_listener`. Failure in
+`pre_setup` / `setup` unloads that addon version only; other addons
+keep loading. Call `self.request_server_restart()` to force a restart.
+
+Keep `server/` **stateless** — persistence belongs in Postgres, not
+on self.
 
 ## Client side — `AYONAddon`
 

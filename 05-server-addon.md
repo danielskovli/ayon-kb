@@ -162,17 +162,46 @@ Dropped in `public/` (no auth) or `private/` (auth required).
 
 ## Lifecycle hooks on `BaseServerAddon`
 
-Commonly overridden async methods:
+Source: `ayon-backend/ayon_server/addons/addon.py` +
+`ayon-backend/ayon_server/api/lifespan.py` (verified 2026-04-21 on
+`develop`).
+
+**Order of execution:**
+
+1. `__init__(definition, addon_dir, **kwargs)` — the base class
+   implements this; it populates metadata from `package.py` and calls
+   `self.initialize()` as its last line. **Do not override.**
+2. `initialize(self)` — default no-op. Override for wiring that needs
+   metadata populated. Typical spot for `self.add_endpoint(...)` and
+   `self.add_event_listener(...)`.
+3. `pre_setup(self)` — default no-op. Called during server lifespan
+   startup, once per addon version, sequentially across every loaded
+   addon. Async-aware (the runtime detects coroutines and awaits).
+4. `setup(self)` — default no-op. Runs in a second pass after **all**
+   addons have finished `pre_setup`. Same async semantics.
+5. `on_settings_changed(self, old_settings, new_settings, variant, project_name, site_id, user_name)`
+   — fires when settings are saved via the settings-change API **and**
+   the caller passes `send_event=True`. Source carries a deprecation
+   note — long-term this will be replaced by event-topic subscription.
+
+There is **no `post_setup`** on the current `develop` branch.
+
+**Failure handling** — if `pre_setup` or `setup` raises
+`AssertionError` or any other `Exception`, the server unloads that
+addon version (captured in `bad_addons`) and keeps going. If any
+addon calls `self.request_server_restart()` during these phases, the
+server skips endpoint / static / frontend registration and dispatches
+a restart event instead.
+
+Other commonly overridden methods (not lifecycle-ordered):
 
 | Method | When |
 |--------|------|
-| `setup` | One-time on addon load |
-| `initialize` | After `setup`, wire endpoints + event listeners |
 | `get_default_settings` | UI reset / project init |
-| `pre_setup` / `post_setup` | Ordered hooks around initialization |
-| `on_settings_changed` | When studio/project overrides change |
-
-Check `ayon_server.addons.base` for the full surface — it evolves.
+| `convert_settings_overrides` | Migrate overrides across addon versions |
+| `get_simple_actions` / `get_dynamic_actions` | Expose addon actions |
+| `execute_action` | Handle an action invocation |
+| `get_sso_options` | Advertise an SSO provider |
 
 ## Tips
 

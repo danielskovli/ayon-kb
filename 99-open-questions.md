@@ -28,16 +28,17 @@ Returned 404 or "under construction" on the canonical docs site:
 carry the "under construction 🏗️" banner (re-checked 2026-04-21) —
 treat their absolute statements with caution.
 
-## Unconfirmed `ayon-core` / `ayon-backend` internals
+## `ayon-core` / `ayon-backend` internals — resolved
 
-Not yet cross-checked against current source:
+All items in this section were confirmed against `develop` on
+2026-04-21 and promoted into numbered files:
 
-- `BaseServerAddon` lifecycle order — the exact sequence of
-  `pre_setup` → `setup` → `post_setup` → `initialize` and when
-  `on_settings_changed` fires.
-
-Resolved in the 2026-04-21 sweep (promoted into numbered files):
-
+- `BaseServerAddon` lifecycle order — actual order is `__init__` →
+  `initialize` → `pre_setup` → `setup`. `pre_setup` / `setup` run
+  per-addon-version during server lifespan startup; `on_settings_changed`
+  fires on settings save with `send_event=True`. **No `post_setup`**
+  on current `develop`. See `05-server-addon.md § Lifecycle hooks on
+  BaseServerAddon`.
 - `SettingsField` kwarg surface — see `05-server-addon.md § Settings UI`.
 - `IWorkfileHost` current + deprecated method set — see
   `07-host-integration.md § Required / useful interfaces`.
