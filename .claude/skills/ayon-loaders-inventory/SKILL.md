@@ -151,7 +151,7 @@ The tool is at `AYON → Manage → Inventory`. Its actions map to:
 | Action | Under the hood |
 |--------|---------------|
 | Update to Latest | `update_container(container, -1)` |
-| Change to Hero | `update_container(container, "hero")` |
+| Change to Hero | `update_container(container, HeroVersionType())` |
 | Set Version | `update_container(container, specific_version)` |
 | Switch Asset | `switch_container(container, new_representation)` |
 | Remove | `remove_container(container)` |

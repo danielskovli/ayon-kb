@@ -188,23 +188,33 @@ Check `ayon_server.addons.base` for the full surface — it evolves.
 
 ## Settings UI — widgets & patterns
 
-`SettingsField` accepts extra kwargs that control the rendered UI. Seen in
-official addons (check the current `ayon_server.settings` source for the full
-list):
+`SettingsField` extends pydantic's `Field` with AYON-specific UI hints.
+Source: `ayon_server/settings/settings_field.py`.
+
+**AYON-specific kwargs:**
 
 | Kwarg | Purpose |
 |-------|---------|
 | `title` | Label shown in UI |
-| `description` | Help tooltip (supports short markdown) |
+| `description` | Help tooltip (short markdown) |
 | `example` | Placeholder / example value |
+| `placeholder` | Explicit placeholder text |
 | `scope` | `["studio","project","studio-site","project-site"]` |
 | `section` | Start a new collapsible section above this field |
 | `layout` | `"compact"`, `"expanded"` — override default |
 | `widget` | Override control (`"textarea"` for `str`, `"color"`, `"password"`) |
-| `conditional_enum` | Show only when another field equals a given value |
+| `syntax` | Code-editor highlighter hint on text fields |
+| `enum_resolver` | Callable returning enum values at render time |
+| `conditional_enum` | Show only when another field equals a given value (old `conditionalEnum` accepted for back-compat) |
+| `required_items` | Marks specific entries in a list as required |
 | `tags` | UI hint tags (e.g. `"developer"` to hide from artists) |
-| `regex` / `min_length` / `max_length` | Validation on `str` |
-| `ge` / `le` / `gt` / `lt` | Validation on numbers |
+| `disabled` | Render read-only |
+
+**Pydantic pass-throughs** (validation/metadata):
+- Strings: `regex`, `min_length`, `max_length`
+- Numbers: `ge`, `le`, `gt`, `lt`, `multiple_of`, `allow_inf_nan`, `max_digits`, `decimal_places`
+- Lists: `min_items`, `max_items`, `unique_items`
+- Typing: `default_factory`, `alias`, `discriminator`, `allow_mutation`, `repr`, `examples`
 
 Common patterns:
 

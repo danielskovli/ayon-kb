@@ -161,7 +161,10 @@ The artist-facing tool (see `17-user-workflows.md#scene-inventory`) calls:
 
 - **Update to Latest** → `update_container(container, -1)` for each
   outdated container.
-- **Change to Hero** → `update_container(container, "hero")`.
+- **Change to Hero** → `update_container(container, HeroVersionType())`
+  (the literal string `"hero"` is UI nomenclature; callers pass a
+  `HeroVersionType` instance — `update_container` branches on
+  `isinstance(version, HeroVersionType)`).
 - **Set version** → `update_container(container, specific_version)`.
 - **Switch Asset** → `switch_container(container, new_representation)`.
 - **Remove** → `remove_container(container)`.

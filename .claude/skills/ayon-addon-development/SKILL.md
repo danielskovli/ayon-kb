@@ -87,16 +87,21 @@ class MyAddon(BaseServerAddon):
 
 ### Settings — `SettingsField` kwargs
 
+AYON-specific (source: `ayon_server/settings/settings_field.py`):
+
 | Kwarg | Use |
 |-------|-----|
-| `title`, `description`, `example` | UI copy |
+| `title`, `description`, `example`, `placeholder` | UI copy |
 | `scope` | `["studio", "project", "studio-site", "project-site"]` |
-| `section` | Start a new collapsible section |
-| `widget` | `"textarea"`, `"color"`, `"password"`, … |
+| `section`, `layout` | Layout hints |
+| `widget`, `syntax` | `"textarea"`, `"color"`, `"password"`; `syntax` = highlighter |
 | `enum_resolver` | Callable returning enum values |
-| `conditional_enum` | Show only when another field matches |
-| `regex` / `min_length` / `max_length` / `ge` / `le` | Validation |
+| `conditional_enum` | Show only when another field matches (old `conditionalEnum` accepted) |
+| `required_items` | Mark specific list entries as required |
 | `tags` | UI hints (e.g. `"developer"` to hide from artists) |
+| `disabled` | Render read-only |
+
+Plus pydantic validation pass-throughs (`regex`, `min_length`, `max_length`, `ge`, `le`, `gt`, `lt`, `multiple_of`, `min_items`, `max_items`, `unique_items`, `default_factory`, `discriminator`, etc.).
 
 Profile pattern (used all over `ayon-core`): a `list[Profile]` field where
 each `Profile` carries its own `hosts`, `task_types`, `product_types`

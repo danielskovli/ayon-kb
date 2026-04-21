@@ -153,9 +153,11 @@ the metadata JSON.
 
 ### `AYON_SITE_ID`
 
-**Not in addon source.** Valid Ayon advice (reduces per-worker site
-registration), but no explicit settings field or injector. Treat as
-studio configuration.
+Not a settings field, but **read from the worker environment** by
+`collect_environment_file_to_delete.py` as part of the cache key for
+the shared env file that `GlobalJobPreLoad` produces. Set it
+uniformly across farm nodes so workers share one cached env bundle;
+unset → per-user cache keys.
 
 ## Settings models (source-confirmed)
 

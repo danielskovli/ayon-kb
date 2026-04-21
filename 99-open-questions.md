@@ -24,44 +24,44 @@ Returned 404 or "under construction" on the canonical docs site:
   `help.ayon.app/en/articles/3882937-site-sync`
 
 `docs.ayon.dev/docs/dev_addon_intro` and
-`docs.ayon.dev/docs/dev_addon_creation` are flagged as under
-construction; treat their absolute statements with caution.
+`docs.ayon.dev/docs/dev_addon_creation` render real content but still
+carry the "under construction 🏗️" banner (re-checked 2026-04-21) —
+treat their absolute statements with caution.
 
 ## Unconfirmed `ayon-core` / `ayon-backend` internals
 
-Not yet cross-checked against current `ayon-core` / `ayon-backend`
-source:
+Not yet cross-checked against current source:
 
 - `BaseServerAddon` lifecycle order — the exact sequence of
   `pre_setup` → `setup` → `post_setup` → `initialize` and when
   `on_settings_changed` fires.
-- `SettingsField` kwarg surface in `05-server-addon.md` — synthesised
-  from patterns seen in `ayon-core`. `widget`, `conditional_enum`,
-  `tags` in particular should be verified.
-- `IWorkfileHost` full method list — docs show the concept; actual set
-  (`has_unsaved_changes`, `work_root`, `file_extensions`,
-  `list_workfiles`) varies by Ayon version.
-- Hero-version update signature `update_container(container, "hero")` —
-  per docs wording, not source.
-- Container dict schema string `"openpype:container-2.0"` — may have a
-  newer schema version.
+
+Resolved in the 2026-04-21 sweep (promoted into numbered files):
+
+- `SettingsField` kwarg surface — see `05-server-addon.md § Settings UI`.
+- `IWorkfileHost` current + deprecated method set — see
+  `07-host-integration.md § Required / useful interfaces`.
+- `update_container` hero-version signature — actual call is
+  `update_container(container, HeroVersionType())`, not the literal
+  string `"hero"`; see `15-loaders-inventory.md § Scene Inventory UI`.
+- Container dict schema string `"openpype:container-2.0"` — still the
+  current value on `develop` (verified against
+  `ayon-core/client/ayon_core/pipeline/schema/container-2.0.json`).
 
 ## Deadline
 
-Confirmed in source during 2026-04-21 sweep: submitter class names,
-`AbstractSubmitDeadline`, settings tree (see `24-deadline.md`).
+All prior open items resolved in the 2026-04-21 sweep:
 
-**Remaining unconfirmed:**
-
-- **`AYON_SITE_ID` recommendation**: cited by help-docs articles as a
-  farm-tuning tip, but no explicit settings field or injector in the
-  Deadline addon's Python source. Treat as studio-configuration advice.
-- **Multi-server `{server_url}@{token}` URL format**: older KB versions
-  referenced this; **not present** in `server/settings/main.py`.
-  Credentials are per-server via `ServerItemSubmodel` fields
-  (`default_username`, `default_password`, `require_authentication`,
-  `not_verify_ssl`). If a legacy `@token` grammar exists somewhere
-  (e.g. a webservice URL convention), it's not in the main schema.
+- Submitter class names, `AbstractSubmitDeadline`, settings tree — see
+  `24-deadline.md`.
+- `AYON_SITE_ID` — **is** read in addon code
+  (`collect_environment_file_to_delete.py`) as part of the cache key
+  for the persistent env file; not a settings field. See
+  `24-deadline.md § AYON_SITE_ID`.
+- Multi-server `{server_url}@{token}` URL format — confirmed **not
+  present** in source. Credentials are per-server via
+  `ServerItemSubmodel` fields (`default_username`, `default_password`,
+  `require_authentication`, `not_verify_ssl`).
 
 ## Premiere
 

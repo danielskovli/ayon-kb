@@ -20,9 +20,9 @@ from ayon_core.pipeline import install_host
 class MayaHost(HostBase, IWorkfileHost, ILoadHost):
     name = "maya"
 
-    # --- IWorkfileHost ---
+    # --- IWorkfileHost (abstract methods only) ---
+    def save_workfile(self, dst_path=None): ...
     def open_workfile(self, filepath): ...
-    def save_current_workfile(self, filepath=None): ...
     def get_current_workfile(self): ...
 
     # --- ILoadHost ---
@@ -51,7 +51,7 @@ the previous one is replaced.
 | Interface | Purpose | Representative methods |
 |-----------|---------|-----------------------|
 | `HostBase` | Base class | `name` attribute required |
-| `IWorkfileHost` | Workfiles tool | `open_workfile`, `save_current_workfile`, `get_current_workfile`, `has_unsaved_changes`, `work_root`, `file_extensions`, `list_workfiles` |
+| `IWorkfileHost` | Workfiles tool | abstract: `save_workfile`, `open_workfile`, `get_current_workfile`. Concrete helpers: `workfile_has_unsaved_changes`, `get_workfile_extensions`, `save_workfile_with_context`, `open_workfile_with_context`, `list_workfiles`, `list_published_workfiles`, `copy_workfile`, `copy_workfile_representation`. Deprecated shims (`save_file`, `open_file`, `current_file`, `has_unsaved_changes`, `file_extensions`) are still present — avoid in new code. |
 | `ILoadHost` | Loader + Scene Inventory | `get_containers`, `update_context_data` |
 | `IPublishHost` / `INewPublisher` | Publisher state | `get_context_data`, `update_context_data`, `get_context_title`, `get_current_context` |
 | `IHostAddon` (on the `AYONAddon`, not the `HostBase`) | Registers host with `ayon-applications` | `get_workfile_extensions`, `add_implementation_envs` |

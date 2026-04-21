@@ -185,11 +185,13 @@ The AYON plugin on Deadline reads server URL + API key from a
 
 ### `AYON_SITE_ID`
 
-**Not confirmed in source.** The help-docs recommendation to set
-`AYON_SITE_ID` uniformly across farm machines is valid Ayon advice
-(reduces per-worker site registration), but there's no explicit
-settings field or injector for it in the Deadline addon's Python. See
-`99-open-questions.md`.
+Not a settings field — read from the worker's environment by
+`client/ayon_deadline/plugins/publish/global/collect_environment_file_to_delete.py`
+via `os.environ.get("AYON_SITE_ID")` and folded into the hash key for
+the persistent environment file that `GlobalJobPreLoad` caches. Set
+`AYON_SITE_ID` uniformly across farm machines so workers share a
+single cached env bundle; leave it unset and every worker falls back
+to user-only cache keys.
 
 ### Optional webservice auth
 
