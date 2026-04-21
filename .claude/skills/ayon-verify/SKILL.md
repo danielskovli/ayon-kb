@@ -1,7 +1,6 @@
 ---
 name: ayon-verify
-description: Verify a claimed Ayon class, method, attribute, or kwarg against the canonical live source on GitHub (`ayon-core`, `ayon-backend`, `ayon-python-api`, or per-DCC repos). Reports whether the symbol exists, its current signature/attributes, and flags renames/moves. Use before committing code that relies on any specific Ayon API surface — especially anything from older docs or memory.
-when_to_use: User types `/ayon-verify <symbol>` or asks to "confirm this method exists" / "is this still the right class name" / "verify BaseServerAddon has X" before relying on the KB.
+description: Verify a claimed Ayon class, method, attribute, or kwarg against the canonical live source on GitHub (`ayon-core`, `ayon-backend`, `ayon-python-api`, or per-DCC repos). Invoked via `/ayon-verify <symbol>` or when user asks to "confirm this method exists" / "is this still the right class name" / "verify BaseServerAddon has X". Reports whether the symbol exists, its current signature / attributes, and flags renames / moves. Use before committing code that relies on any specific Ayon API surface — especially anything from older docs or memory.
 argument-hint: [Class.method or import.path or free text]
 disable-model-invocation: true
 allowed-tools: WebFetch WebSearch Bash(gh *) Grep

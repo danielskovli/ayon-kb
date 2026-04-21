@@ -1,7 +1,6 @@
 ---
 name: ayon-launcher-dev
-description: Ayon launcher, bundles, developer mode, and testing — `ayon`/`ayon.exe` CLI flags, env vars (`AYON_*`), storage directories per OS, bundle concept (prod/staging/dev), dev-mode workflow (`--use-dev`), assigning a dev bundle to yourself, `ayon-dependencies-tool`, integration test runner, contributing git-flow. Use when setting up dev mode, diagnosing launcher issues, configuring a bundle, running tests, or onboarding to Ayon development.
-when_to_use: Triggered by "launcher", "ayon.exe", "ayon_console", "bundle", "staging", "dev bundle", "--use-dev", "AYON_SERVER_URL", "AYON_BUNDLE_NAME", "AYON_LAUNCHER_STORAGE_DIR", "dependency package", "ayon-dependencies-tool", "ayon-docker", "integration tests", "runtests", "contributing", "feature branch".
+description: Ayon launcher, bundles, developer mode, and testing. Use for setting up dev mode, diagnosing launcher issues, configuring a bundle, running tests, onboarding contributing, or working on feature branches. Executables `ayon` / `ayon.exe` / `ayon_console`; CLI flags `--bundle`, `--use-dev`, `--use-staging`, `--verbose`, `--debug`, `--headless`, `--skip-bootstrap`, `init-ayon-launcher`. Env vars `AYON_SERVER_URL`, `AYON_API_KEY`, `AYON_BUNDLE_NAME`, `AYON_LAUNCHER_STORAGE_DIR`, `AYON_*`. Per-OS storage directories. Bundle concept (production / staging / dev bundle), assigning a dev bundle to yourself. Dependency packages via `ayon-dependencies-tool`, `ayon-docker`, integration tests (`runtests`).
 ---
 
 # Ayon launcher, bundles, dev mode, testing

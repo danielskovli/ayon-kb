@@ -1,7 +1,6 @@
 ---
 name: ayon-new-addon
-description: Scaffold a new Ayon addon from `ynput/ayon-addon-template`. Creates the local skeleton with `package.py`, `server/`, `client/<name>/`, fills placeholder metadata, and prints the upload-to-server + bundle-activation steps. Use when starting a new addon — saves 20 minutes of boilerplate.
-when_to_use: User types `/ayon-new-addon <name>` or asks to "scaffold a new Ayon addon" / "start a new addon called X".
+description: Scaffold a new Ayon addon from `ynput/ayon-addon-template`. Invoked via `/ayon-new-addon <name>` or when user asks to "scaffold a new Ayon addon" / "start a new addon called X". Creates the local skeleton with `package.py`, `server/`, `client/<name>/`, fills placeholder metadata, and prints the upload-to-server + bundle-activation steps. Saves 20 minutes of boilerplate on a new addon.
 argument-hint: [addon_name]
 disable-model-invocation: true
 allowed-tools: Bash(git clone *) Bash(cp *) Bash(mv *) Bash(rm *) Bash(ls *) Bash(sed *) Bash(find *) Bash(mkdir *) Read Write Edit

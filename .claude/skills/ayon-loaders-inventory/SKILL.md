@@ -1,7 +1,6 @@
 ---
 name: ayon-loaders-inventory
-description: Write Ayon loader plugins and scene inventory actions — `LoaderPlugin` class attributes and methods, `ProductLoaderPlugin`, `LoaderHookPlugin`, utility functions (`load_container`, `update_container`, `switch_container`, `remove_container`, `get_representation_path*`, `get_representation_context*`), container dict schema, custom `InventoryAction`. Use when writing a loader for a new format, adding Scene Inventory actions, resolving published file paths outside a DCC, or debugging "Update to Latest" / "Switch Asset".
-when_to_use: Triggered by "loader", "LoaderPlugin", "ProductLoaderPlugin", "LoaderHookPlugin", "load_container", "switch_container", "update_container", "InventoryAction", "scene inventory", "get_containers", "get_representation_path", "container dict", "AVALON_CONTAINER_ID", "hero version".
+description: Write Ayon loader plugins and scene inventory actions. Use when writing a loader for a new format, adding Scene Inventory / scene inventory UI actions, resolving published file paths outside a DCC, or debugging "Update to Latest" / "Switch Asset" / hero version loads. Covers `LoaderPlugin` (class attributes `product_types` / `representations` / `extensions` / `order` / `label` / `icon`, methods `load` / `update` / `remove` / `switch`), `ProductLoaderPlugin`, `LoaderHookPlugin`. Utility functions: `load_container`, `update_container`, `switch_container`, `remove_container`, `get_representation_path`, `get_representation_path*`, `get_representation_context*`, `get_containers`. Container dict schema including `AVALON_CONTAINER_ID`. Custom `InventoryAction`.
 ---
 
 # Ayon loaders & scene inventory

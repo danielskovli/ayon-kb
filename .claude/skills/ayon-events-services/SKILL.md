@@ -1,7 +1,6 @@
 ---
 name: ayon-events-services
-description: Ayon event system and services — persistent vs fire-and-forget events, topic taxonomy (`entity.*.created`, `log.*`, `settings.changed`, etc.), `dispatch_event`, the enroll pattern for idempotent services, ASH (Ayon Service Host) as supervisor, declaring services from an addon's `package.py`. Use when reacting to server events, writing a background worker, subscribing to topics from a server addon, or deploying a dockerised Ayon service.
-when_to_use: Triggered by "event", "topic", "dispatch_event", "enroll", "POST /api/enroll", "ASH", "service", "background worker", "entity.version.created", "entity.folder.status_changed", "log.info", "persistent event", "fire-and-forget", "WebSocket event", "depends_on".
+description: Ayon event system and services — for reacting to server events, writing a background worker, subscribing to topics from a server addon, or deploying a dockerised Ayon service. Persistent events vs fire-and-forget (`store=False`), WebSocket event stream, topic taxonomy (`entity.folder.created`, `entity.version.created`, `entity.folder.status_changed`, `log.info`, `log.*`, `settings.changed`). `dispatch_event`, `depends_on` chains. The enroll pattern for idempotent services (`POST /api/enroll`). ASH (Ayon Service Host) as supervisor. Declaring services from an addon's `package.py`.
 ---
 
 # Ayon events & services

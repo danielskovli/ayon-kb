@@ -1,7 +1,6 @@
 ---
 name: ayon-pipeline-basics
-description: Ayon fundamentals — product overview, server/launcher/addon architecture, entity model (Project → Folder → Task → Product → Version → Representation), bundles, OpenPype lineage, and vocabulary. Use when orienting to Ayon, explaining what it is, mapping repos, discussing architecture, or when a user mentions "folder", "product", "bundle", "family", "avalon", "OpenPype" in an Ayon context.
-when_to_use: Triggered by questions like "what is Ayon", "how is Ayon architected", "what's a folder/product/version", "is this the same as OpenPype", "where does the launcher fit", "what are bundles", plus any disambiguation between OpenPype-era and Ayon-era terminology.
+description: Ayon fundamentals — use for orientation questions "what is Ayon", "how is Ayon architected", "what's a folder / product / version / bundle", "is this the same as OpenPype", "where does the launcher fit", "what are bundles", and for disambiguating OpenPype-era vs Ayon-era terminology (family vs product, avalon, pype). Product overview, server / launcher / addon architecture. Entity model: Project → Folder → Task → Product → Version → Representation. Bundles (prod/staging/dev). pyblish / Avalon / OpenPype / Ayon lineage. ASH (Ayon Service Host) and `ayon-python-api` basics.
 ---
 
 # Ayon pipeline basics

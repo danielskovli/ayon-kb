@@ -1,7 +1,6 @@
 ---
 name: ayon-dcc-integrations
-description: Ayon per-DCC integration map — which addon lives at which repo (Maya, Blender, Houdini, Nuke, 3ds Max, Unreal, AfterEffects, Photoshop, Hiero, Fusion, TVPaint, Resolve, Cinema 4D, Flame, Substance, Zbrush, Mocha, etc.) plus production-tracker and farm integrations (ftrack, Shotgrid, Kitsu, Deadline, Slack, Jira, Perforce). Use when looking for a specific DCC's source repo, porting an integration, or needing artist/admin help articles per DCC.
-when_to_use: Triggered by "ayon-maya", "ayon-blender", "ayon-houdini", "ayon-nuke", "ayon-unreal", "ayon-deadline", "ayon-ftrack", "ayon-shotgrid", "ayon-kitsu" or similar, and by "which repo", "where's the Maya addon", "is there a Substance integration", "DCC addon repo".
+description: Ayon per-DCC integration map — which addon lives at which repo. Use when asked "which repo", "where's the Maya addon", "is there a Substance integration", "DCC addon repo", when porting an integration, or finding artist/admin help articles per DCC. Covers DCC integrations: `ayon-maya`, `ayon-blender`, `ayon-houdini`, `ayon-nuke`, `ayon-hiero`, `ayon-fusion`, `ayon-3dsmax`, `ayon-unreal`, `ayon-aftereffects`, `ayon-photoshop`, `ayon-premiere`, `ayon-tvpaint`, `ayon-resolve`, `ayon-cinema4d`, `ayon-flame`, `ayon-substance`, `ayon-zbrush`, `ayon-mocha`. Plus production trackers and farm: `ayon-ftrack`, `ayon-shotgrid`, `ayon-kitsu`, `ayon-deadline`, Slack, Jira, Perforce.
 ---
 
 # Ayon DCC & service integrations

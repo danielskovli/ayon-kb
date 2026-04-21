@@ -1,7 +1,6 @@
 ---
 name: ayon-anatomy-templates
-description: Ayon Project Anatomy — roots (per-platform paths), template categories (work, publish, hero, staging, delivery), template keys (`{root[name]}`, `{project}`, `{folder[path]}`, `{task[short]}`, `{product[name]}`, `{@version}`, `{@frame}`, `{ext}`, etc.), optional segments `< {key} >`, uniqueness rules, folder/task types, statuses, tags, link types, anatomy presets and scoping. Use when configuring file paths, writing plugins that resolve published paths, debugging "where did this file go", or changing project anatomy.
-when_to_use: Triggered by "anatomy", "template", "roots", "{root[", "{folder[", "{task[", "{product[", "{version}", "{representation}", "{ext}", "file path", "workfile template", "publish template", "hero template", "anatomy preset", "folder types", "task types", "statuses", "link types".
+description: Ayon Project Anatomy for configuring file paths, resolving published paths, debugging "where did this file go", or changing project anatomy. Roots (per-platform paths for `{root[name]}`), template categories (work / publish / hero / staging / delivery with workfile template, publish template, hero template). Template keys (`{root[...]}`, `{project}`, `{folder[path]}`, `{task[short]}`, `{product[name]}`, `{version}`, `{@version}`, `{@frame}`, `{representation}`, `{ext}`). Optional segments `< {key} >`, uniqueness rules. Folder types, task types, statuses, tags, link types. Anatomy presets and scoping.
 ---
 
 # Ayon Project Anatomy & templates

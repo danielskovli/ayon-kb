@@ -1,7 +1,6 @@
 ---
 name: ayon-apis
-description: Ayon programmatic APIs — `ayon-python-api` / `ayon_api` (connection via `AYON_SERVER_URL`+`AYON_API_KEY`, `ServerAPI`/`ServerAPIBase`, `get_projects`/`get_folders`/`get_tasks`/`get_products`/`get_versions`/`get_representations`, raw HTTP methods); REST (bearer / `X-Api-Key` / `X-as-user`, endpoint groups, pagination); GraphQL (**query-only**, Relay `edges`/`node`/`pageInfo`, `/graphiql`). Use when scripting against Ayon, writing a service, wiring external automation, or debugging API calls.
-when_to_use: Triggered by "ayon-python-api", "ayon_api", "get_server_api_connection", "ServerAPI", "REST API", "GraphQL", "X-Api-Key", "Bearer token", "/api/projects", "/api/folders", "/graphiql", "/graphql", "OpenAPI", "Swagger", "WebSocket events", "raw_get", "GraphQlQuery".
+description: Ayon programmatic APIs for scripting against Ayon, writing services, wiring external automation, or debugging API calls. `ayon-python-api` / `ayon_api` — connection via `AYON_SERVER_URL` + `AYON_API_KEY`, `get_server_api_connection`, `ServerAPI` / `ServerAPIBase`, helpers `get_projects` / `get_folders` / `get_tasks` / `get_products` / `get_versions` / `get_representations`, raw HTTP (`raw_get`). REST API — Bearer token / `X-Api-Key` / `X-as-user` auth, endpoint groups (`/api/projects`, `/api/folders`), pagination, OpenAPI / Swagger at `/api`. GraphQL (**query-only**) — `GraphQlQuery`, Relay `edges` / `node` / `pageInfo`, GraphiQL at `/graphiql` / `/graphql`. WebSocket events stream.
 ---
 
 # Ayon APIs — Python, REST, GraphQL

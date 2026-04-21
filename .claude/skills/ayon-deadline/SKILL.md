@@ -1,7 +1,6 @@
 ---
 name: ayon-deadline
-description: Thinkbox Deadline integration for Ayon — two-job pattern (DCC Render Job → AYON Publish Job via `ProcessSubmittedJobOnFarm`), `AbstractSubmitDeadline` base class with `get_job_info` / `get_plugin_info` extension points, concrete submitters (`MayaSubmitDeadline`, `MayaCacheSubmitDeadline`, `NukeSubmitDeadline`, `HoudiniSubmitDeadline` + `HoudiniSubmitDeadlineUsdRender`, `HoudiniCacheSubmitDeadline`, `ProcessSubmittedCacheJobOnFarm`), Deadline-side plugin `AyonDeadlinePlugin` + `GlobalJobPreLoad` env injection at `client/ayon_deadline/repository/custom/plugins/`, per-server settings (`deadline_urls` with auth fields, per-project `deadline_server`, per-site `local_settings`), Houdini export+render split via `splitRender=True`, tile rendering (Maya), workfile-as-dependency (Nuke). Use when submitting, writing a custom submitter, configuring Deadline, or debugging a farm-side publish failure.
-when_to_use: Triggered by "Deadline", "ayon-deadline", "farm render", "AbstractSubmitDeadline", "MayaSubmitDeadline", "NukeSubmitDeadline", "HoudiniSubmitDeadline", "ProcessSubmittedJobOnFarm", "GlobalJobPreLoad", "AyonDeadlinePlugin", "deadline_urls", "deadline_server", "splitRender", "tile rendering", "reuse_last_version", "farm publish", "farm job failed", "render pool", "render group".
+description: Thinkbox Deadline integration for Ayon (`ayon-deadline`, farm render, farm publish, farm job failed). Two-job pattern — DCC Render Job → AYON Publish Job via `ProcessSubmittedJobOnFarm`. Custom submitters extend `AbstractSubmitDeadline` (override `get_job_info` / `get_plugin_info`): `MayaSubmitDeadline`, `MayaCacheSubmitDeadline`, `NukeSubmitDeadline`, `HoudiniSubmitDeadline`, `HoudiniSubmitDeadlineUsdRender`, `HoudiniCacheSubmitDeadline`, `ProcessSubmittedCacheJobOnFarm`. Deadline-side `AyonDeadlinePlugin` + `GlobalJobPreLoad` env injection at `client/ayon_deadline/repository/custom/plugins/`. Settings: `deadline_urls` + auth fields, per-project `deadline_server`, per-site `local_settings`, `reuse_last_version`, render pool, render group. Houdini `splitRender=True` export+render split, Maya tile rendering, Nuke workfile-as-dependency. Use when writing a submitter, configuring Deadline, or debugging a farm-side publish failure.
 ---
 
 # Thinkbox Deadline in Ayon
@@ -135,7 +134,9 @@ client/ayon_deadline/repository/custom/plugins/
 │  ├─ Ayon.param
 │  ├─ Ayon.options
 │  └─ Ayon.ico
-├─ CelAction/  HarmonyAYON/  UnrealEngine5/
+├─ CelAction/
+├─ HarmonyAYON/
+└─ UnrealEngine5/
 ```
 
 Copy the contents of `custom/plugins/` into the Deadline repository.

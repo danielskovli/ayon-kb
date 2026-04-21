@@ -1,7 +1,6 @@
 ---
 name: ayon-publishing
-description: Write Ayon publish plugins — pyblish CCVEI lifecycle (Collect → Validate → Extract → Integrate), Create phase, `CreateContext`, `CreatedInstance`, Creator flavours (`BaseCreator`, `Creator`, `HiddenCreator`, `AutoCreator`), attribute definitions (`BoolDef`, `NumberDef`, `EnumDef`, …), dynamic product names, validation error classes (`PublishValidationError`, `PublishXmlValidationError`, `KnownPublishError`), repair actions. Use when writing publishers/creators/validators/extractors, debugging publish failures, or defining a new product type.
-when_to_use: Triggered by "publish plugin", "pyblish", "CCVEI", "Creator", "AutoCreator", "HiddenCreator", "collector", "validator", "extractor", "integrator", "PublishValidationError", "attribute_definitions", "instance_id", "productType", "family", "pre_create_attr_defs", "get_dynamic_data", "repair action".
+description: Write Ayon publish plugins — pyblish CCVEI lifecycle (Collector, Validator, Extractor, Integrator) plus the Create phase. Use when writing publishers / creators / validators / extractors / integrators, debugging publish failures, defining a new productType / family / product type, or adding a repair action. Covers `CreateContext`, `CreatedInstance`, `instance_id`. Creator flavours: `BaseCreator`, `Creator`, `HiddenCreator`, `AutoCreator`. Attribute definitions (`attribute_definitions`, `pre_create_attr_defs`): `BoolDef`, `NumberDef`, `EnumDef`, `TextDef`, `UISeparatorDef`. Dynamic product names via `get_dynamic_data`. Validation error classes: `PublishValidationError`, `PublishXmlValidationError`, `KnownPublishError`.
 ---
 
 # Ayon publishing

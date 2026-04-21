@@ -1,7 +1,6 @@
 ---
 name: ayon-site-sync-colorspace
-description: Ayon cross-cutting concerns — Site Sync (sites as storage locations, active/remote roles, providers `local_drive`/`gdrive`/`sftp`, per-representation tracking, `syncservice`) and colorspace / OCIO (`ColormanagedPyblishPluginMixin.set_representation_colorspace`, `colorspaceData` on representations, `get_imageio_config`, per-host `imageio` settings). Use when writing multi-site-aware plugins, integrating OCIO into a host, embedding colorspace in extractors, or debugging "file not found locally" / wrong colorspace on load.
-when_to_use: Triggered by "site sync", "sites", "active site", "remote site", "gdrive", "SFTP provider", "syncservice", "representation site availability", "OCIO", "colorspace", "ColormanagedPyblishPluginMixin", "set_representation_colorspace", "colorspaceData", "imageio", "ACEScg", "display transform".
+description: Ayon cross-cutting concerns — Site Sync and Colorspace / OCIO. Site Sync: sites as storage locations (active site / remote site roles), providers `local_drive` / `gdrive` / SFTP provider, per-representation site availability tracking, `syncservice`. Colorspace / OCIO: `ColormanagedPyblishPluginMixin.set_representation_colorspace`, `colorspaceData` on representations, `get_imageio_config`, per-host `imageio` settings, ACEScg, display transform. Use when writing multi-site-aware plugins, integrating OCIO into a host, embedding colorspace in extractors, or debugging "file not found locally" / wrong colorspace on load.
 ---
 
 # Site Sync & Colorspace

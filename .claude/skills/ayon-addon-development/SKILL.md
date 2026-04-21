@@ -1,7 +1,6 @@
 ---
 name: ayon-addon-development
-description: Build Ayon addons — repo layout, `package.py`, server side (`BaseServerAddon`, `BaseSettingsModel`, `SettingsField`, REST endpoints, web actions, frontend scopes, static public/private files) and client side (`AYONAddon`, `ITrayAddon`, `IPluginPaths`, `click_wrap` CLI, launch hooks). Use when creating, extending, or debugging an Ayon addon; defining settings; wiring server endpoints; writing tray widgets; adding frontend UIs; or packaging/uploading an addon.
-when_to_use: Triggered by "build an addon", "new Ayon addon", "BaseServerAddon", "AYONAddon", "package.py", "addon settings", "SettingsField", "add_endpoint", "web action", "frontend_scopes", "IPluginPaths", "ITrayAddon", "upload addon", "bundle addon", "addon template".
+description: Build, extend, debug an Ayon addon (new Ayon addon, addon template, bundle addon). Covers repo layout, `package.py`, addon settings. Server side (`BaseServerAddon`, `BaseSettingsModel`, `SettingsField`, REST endpoints via `add_endpoint`, web actions, `frontend_scopes`, static public/private files). Client side (`AYONAddon`, `ITrayAddon`, `IPluginPaths`, `click_wrap` CLI, launch hooks). Use when defining addon settings, wiring server endpoints, writing tray widgets, adding frontend UIs, or packaging/uploading an addon.
 ---
 
 # Ayon addon development
@@ -25,15 +24,24 @@ my_addon/
 │  │  ├─ addon.py           # AYONAddon subclass
 │  │  ├─ version.py         # __version__
 │  │  ├─ plugins/
-│  │  │  ├─ create/  load/  publish/  inventory/
+│  │  │  ├─ create/
+│  │  │  ├─ load/
+│  │  │  ├─ publish/
+│  │  │  └─ inventory/
 │  │  ├─ hooks/             # pre/post launch hooks
 │  │  ├─ startup/           # DCC-specific boot scripts
 │  │  └─ api/               # in-DCC code (keep imports lazy)
 │  └─ pyproject.toml        # client deps — consumed by ayon-dependencies-tool
-├─ frontend/dist/index.html # optional — built Vite/React app
-├─ public/   private/       # static files
-├─ services/<name>/         # dockerised services (see ayon-events-services)
-├─ pyproject.toml  LICENSE  README.md
+├─ frontend/
+│  └─ dist/
+│     └─ index.html         # optional — built Vite/React app
+├─ public/                  # static files — no auth
+├─ private/                 # static files — bearer / API key required
+├─ services/
+│  └─ <name>/               # dockerised services (see ayon-events-services)
+├─ pyproject.toml
+├─ LICENSE
+└─ README.md
 ```
 
 ## `package.py` — minimum

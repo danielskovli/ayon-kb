@@ -1,7 +1,6 @@
 ---
 name: ayon-host-integration
-description: Build or modify a DCC host integration for Ayon — `HostBase`, `IWorkfileHost`, `ILoadHost`, `IPublishHost` / `INewPublisher`, `IHostAddon`, `install_host`, in-DCC bootstrap, menu wiring via `HostToolsHelper`, launch hooks, per-host folder layout. Use when adding a new DCC to Ayon, debugging host bootstrap or menus, or when a user mentions `HostBase`, `registered_host`, `install_host`, `IWorkfileHost`, `get_containers`, or a specific DCC in a pipeline-wiring context.
-when_to_use: Triggered by "new DCC integration", "add host", "HostBase", "IWorkfileHost", "ILoadHost", "IPublishHost", "install_host", "get_current_context", "ayon-blender", "ayon-maya", "register_host", "host tools", "DCC menu".
+description: Build or modify a DCC host integration for Ayon (new DCC integration, add host, wire DCC menu, bootstrap a DCC). Covers `HostBase`, `IWorkfileHost`, `ILoadHost`, `IPublishHost` / `INewPublisher`, `IHostAddon`, `install_host`, `register_host`, `registered_host`, `get_current_context`, `get_containers`, in-DCC bootstrap, menu wiring via `HostToolsHelper` / host tools, launch hooks, per-host folder layout. Use when adding a new DCC (e.g. `ayon-blender`, `ayon-maya`) or debugging host bootstrap / host tools menus.
 ---
 
 # DCC host integration
@@ -81,7 +80,10 @@ ayon-<host>/
       ├─ hooks/              # pre/post launch hooks
       ├─ startup/            # userSetup.py / menu.py / equivalent
       └─ plugins/
-          ├─ create/  load/  publish/  inventory/
+          ├─ create/
+          ├─ load/
+          ├─ publish/
+          └─ inventory/
 ```
 
 `ayon-core` discovers plugins automatically when the folder name under

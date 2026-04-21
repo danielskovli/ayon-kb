@@ -1,7 +1,6 @@
 ---
 name: ayon-user-workflows
-description: Artist- and admin-facing Ayon workflows — launcher navigation, Workfiles tool, Creator/Publisher (Create vs Publish phases), Loader, Scene Inventory, Tray Publisher, Slater, Batch Delivery, Site Sync from the user view, managing projects, and admin configuration quick-map. Use when answering "how do I X" or "how does the Ayon UI work" from a user/admin perspective, not a developer one.
-when_to_use: Triggered by "how do I publish", "how do I load", "how do I open a workfile", "launcher UI", "Workfiles tool", "Creator", "Publisher UI", "Scene Inventory UI", "Tray Publisher", "Slater", "Batch Delivery", "managing projects", "creating a project", "library project", "where are the addon settings", "how do I launch Maya through Ayon".
+description: Artist- and admin-facing Ayon workflows (user perspective, not developer). Use when answering "how do I publish / load / open a workfile", "how does the Ayon UI work", "how do I launch Maya through Ayon", "where are the addon settings", or UI-driven artist/admin questions. Covers launcher UI / navigation, Workfiles tool, Creator + Publisher UI (Create vs Publish phases), Loader, Scene Inventory UI, Tray Publisher, Slater, Batch Delivery, Site Sync from the user view, managing projects (creating a project, library project), admin configuration quick-map.
 ---
 
 # Ayon user workflows (artist / admin)
