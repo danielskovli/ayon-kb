@@ -82,11 +82,23 @@ relevance; full bodies live at `.claude/skills/<name>/SKILL.md`.
 
 ## Verification policy
 
-Docs and code drift. Rule of thumb:
+**No guessing, no assuming.** Every Ayon-specific claim — class names,
+method signatures, kwargs, setting keys, env vars, endpoint paths,
+file locations, workflow steps, version behaviour — must be grounded
+in the KB (a skill or numbered file) or verified against live source
+**before** you state it. Do not synthesise answers from training
+data, from OpenPype / Avalon / pyblish prior art, or from generic
+pipeline patterns — Ayon has drifted from all of them, and a
+plausible-sounding guess is worse than "I don't know yet" because it
+looks authoritative.
+
+Docs and code drift too. Workflow:
 
 1. **Answer from the relevant skill** (auto-loaded) or its KB file.
-2. **If the question is about a specific class / method / signature /
-   kwarg**, verify against live source before recommending code:
+2. **If the claim isn't in the KB** — or is in the KB but about a
+   specific class / method / signature / kwarg / setting key / env
+   var / endpoint path — verify against live source before
+   recommending:
    - `github.com/ynput/ayon-core` — client classes, pipeline, plugins
    - `github.com/ynput/ayon-backend` — server classes, schemas, endpoints
    - `github.com/ynput/ayon-python-api` — REST/GraphQL client
@@ -95,7 +107,9 @@ Docs and code drift. Rule of thumb:
    Use `/ayon-verify <symbol>` to formalise this.
 3. **If live source contradicts the skill/KB**, trust the source and
    update the KB file in place (plus its Sources block).
-4. **If uncertain, flag it** — add an entry to `99-open-questions.md`.
+4. **If you can't verify, say so plainly** — don't fill the gap. Add
+   an entry to `99-open-questions.md` and flag the uncertainty in
+   your answer, or ask the user.
 
 ## KB conventions
 
